@@ -9,7 +9,8 @@ class Form extends Component {
       values: {
         firstName: "Mary",
         lastName: "Jane",
-        city: "Stockholm"
+        city: "Stockholm",
+        transport: "car"
       },
       errors: {}
     };
@@ -122,6 +123,24 @@ class Form extends Component {
               </sdds-dropdown-option>
             ))}
           </sdds-dropdown>
+        </div>
+
+        <div className="no-padding sdds-col-sm-4 sdds-col-md-8 sdds-col-lg-8 sdds-col-xlg-8">
+          <div className="sdds-dropdown">
+            <span className="sdds-dropdown-label-outside">Native select</span>
+            <select
+              name="transport"
+              id="nativeSelect"
+              value={this.state.values.transport}
+              onChange={(e) => this.setValues("transport", e.target.value, "")}
+            >
+              <option value="">Select one</option>
+              <option value="truck">Truck</option>
+              <option value="bus">Bus</option>
+              <option value="car">Car</option>
+            </select>
+            <span className="sdds-dropdown-helper">Select transportation</span>
+          </div>
         </div>
 
         <div className="no-padding sdds-col-sm-4 sdds-col-md-8 sdds-col-lg-8 sdds-col-xlg-8">
